@@ -1,271 +1,216 @@
 <!DOCTYPE html>
-<html lang="">
-   <head>
-      <meta name="robots" content="index, follow">
-      <link rel="canonical" href="https://mar-decor.com/" />
-      <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="{{  asset('/css/bootstrap.min.css') }}  ">
-      <!-- Font -->
-      <link rel="stylesheet" href="{{  asset('/css/font-awesome.min.css') }}  ">
-      <link rel="stylesheet" href="{{  asset('/css/elegant-font.css ') }}  ">
-      <!-- REVOLUTION STYLE SHEETS -->
-      <link rel="stylesheet" type="text/css" href=" {{  asset('/revolution/css/settings.css ') }}  ">
-      <!-- REVOLUTION LAYERS STYLES -->
-      <link rel="stylesheet" type="text/css" href=" {{  asset('/revolution/css/layers.css ') }}  ">
-      <!-- REVOLUTION NAVIGATION STYLES -->
-      <link rel="stylesheet" type="text/css" href="  {{  asset('/revolution/css/navigation.css') }}  ">
-      <!-- OWL CAROUSEL
-         ================================================== -->
-      <link rel="stylesheet" href=" {{  asset('/css/owl.carousel.css  ') }}  ">
-      <!-- SCROLL BAR MOBILE MENU
-         ================================================== -->
-      <link type="image/png" href=" {{  asset('/images/favicon-32x32.png  ') }}  ">
-      <link type="image/png" href=" {{  asset('/images/favicon-16x16.png  ') }}  ">
-      <!-- Main Style -->
-      <?php  if (  App::getLocale()== 'ar' ){       ?>
-      <link rel="stylesheet" href=" {{  asset('/css/style-ar.css  ') }}  ">
-      <?php  }  else{       ?>
-      <link rel="stylesheet" href=" {{  asset('/css/style-en.css  ') }}  ">
-      <?php      } ?>
-      <link rel="icon" href="{{ URL::to('/').'/images/mar2.jpg '}}" type="image/gif" sizes="56x56">
-   </head>
-   <body>
-      <div class="mobile-menu-first">
-         <div id="mobile-menu" class="mobile-menu">
-            <div class="header-mobile-menu">
-               <div class="mm-toggle">
-                  <i class="fas fa fa-close icon-close"></i>
-               </div>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- mobile meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- bootstrap css file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="{{  asset('/css/owl.carousel.min.css ') }}  ">
+    <link rel="stylesheet" href="{{  asset('/css/owl.theme.default.min.css') }} ">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href=" {{  asset('/images/apple-touch-icon.png') }} ">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{  asset('/images/favicon-32x32.png ') }} ">
+    <link rel="icon" type="image/png" sizes="16x16" href=" {{  asset('/images/favicon-16x16.png') }} ">
+    <link rel="manifest" href=" {{  asset('/images/site.webmanifest') }} ">
+    <link rel="mask-icon" href="{{  asset('/images/safari-pinned-tab.svg') }} " color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- main css file -->
+    <link rel="stylesheet" href=" {{  asset('/css/main.css ') }} ">
+</head>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href=" {{ URL::to('/').'/'.App::getLocale() }} ">
+                    <picture>
+                        <source media="(max-width: 650px)" srcset="{{  asset('/images/180-70.png ') }} ">
+                        <img src=" {{  asset('/images/200-90.png') }} " alt="">
+                    </picture>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ URL::to('/').'/'.App::getLocale() }}">{{ trans('langsite.Home')}}  <span class="sr-only"> {{ trans('langsite.Home')}}</span></a>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ URL::to('/').'/'.App::getLocale().'/About/'}} ">   من نحن </a>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ماذا نقدم</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="single-service.html">خدمة 1</a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 2</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 3</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 4</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 5</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 6</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 7</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 8</a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="single-service.html">خدمة 9</a>
+                            </div>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.Projects').'/3/'}} ">الأخبار</a>
+                            <div class="line"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to('/').'/'.App::getLocale().'/Contact/'}}">تواصل معنا</a>
+                            <div class="line"></div>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item nav-info-links">
+                            <a href="tel:{!! site_settings('phone')  !!} " class="nav-link">  {!! site_settings('phone')  !!}  <img src=" {{  asset('/images/phone-icon.webp ') }}" alt=""></a>
+                        </li>
+                        <li class="nav-item nav-info-links">
+                            <a href="mailto:  {!! site_settings('Mail')  !!}  " class="nav-link">  {!! site_settings('Mail')  !!}  <img src=" {{  asset('/images/close-envelope.webp') }}" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- Mobile Menu -->
-            <div class="mCustomScrollbar light" data-mcs-theme="minimal-dark">
-               <ul class="navi-level-1 hover-style-2 main-navi">
-                  <li class="has-sub"><a   title="{{ trans('langsite.Home')}}" href="{{ URL::to('/').'/'.App::getLocale() }}"><span>{{ trans('langsite.Home')}}</span> </a>
-                  </li>
-                  <li class="has-sub"><a   title="{{ trans('langsite.Home')}}" href="{{ URL::to('/').'/'.App::getLocale().'/About/'}}"><span>{{ trans('langsite.About')}}</span></a>
-                  </li>
-                  <li class="has-sub"><a  title="{{ trans('langsite.Home')}}"  href="{{ URL::to('/').'/'.App::getLocale().'/all_services/'.trans('langsite.services').'/3/'}}"><span>{{ trans('langsite.services')}}</span></a>
-                  </li>
-                						
-                  <li class="has-sub"><a   title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.Projects').'/3/'}}"><span>{{ trans('langsite.Projects')}}</span></a></li>
-                  <li class="has-sub"><a href="{{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.News').'/3/'}}"><span>{{ trans('langsite.News')}}</span></a>
-                  </li>
-                  <li class="has-sub"><a  title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale().'/Contact/'}}"><span>{{ trans('langsite.Contact Us')}}</span></a>
-                  </li>
-               </ul>
-               <div class="footer-mobile-menu">
-                  <ul class="social">
-                     <li class="facebook"><a   title="{!! site_settings('Web_site_name')  !!} " rel="nofollow" target="_blank"  href=" {!! site_settings('facebook')  !!} "><i class="fa fa-facebook"></i></a></li>
-                     <li class="twitter"><a    title="{!! site_settings('Web_site_name')  !!} " rel="nofollow" target="_blank"  href=" {!! site_settings('twitter')  !!} "><i class="fa fa-twitter"></i></a></li>
-                     <li class="google-plus"><a   title="{!! site_settings('Web_site_name')  !!} "  rel="nofollow" target="_blank" href=" {!! site_settings('google-plus')  !!} "><i class="fa fa-google-plus"></i></a></li>
-                     <li class="youtube"><a    title="{!! site_settings('Web_site_name')  !!} "  rel="nofollow" target="_blank" href=" {!! site_settings('youtube')  !!} "><i class="fa fa-youtube-play"></i></a></li>
-                     <li class="linkedin"><a  title="{!! site_settings('Web_site_name')  !!} "   rel="nofollow" target="_blank"  href=" {!! site_settings('linkedin')  !!} "><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                  <ul class="address-footer-mobile">
-                     <li>
-                        <p>  {!! site_settings('Location')  !!}  </p>
-                     </li>
-                     <li>
-                        <p>  {!! site_settings('phone')  !!}   </p>
-                     </li>
-                     <li>
-                        <p>  {!! site_settings('Mail')  !!}  </p>
-                     </li>
-                  </ul>
-               </div>
+        </nav>
+		
+		
+		
+		
+        @yield('content')	
+
+
+		
+        <section id="footer">
+          
+            <div class="footer">
+                <div class="row">
+                        <div class="col-md-3">
+                            <div class="about-footer">
+                                <div class="footer-logo"><img src=" {{  asset('/images/180-70.png') }}" alt=""></div>
+                                <p>   {!! site_settings('About_Us')  !!} </p>
+                                <ul class="list-inline">
+                                    <li class="social-facebook"><a target="_blank" href="  {!! site_settings('facebook')  !!}"><i class="fab fa-facebook"></i></a>
+                                    </li>
+                                    <li class="social-twitter"><a target="_blank" href= " {!! site_settings('twitter')  !!} "><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                   
+                                    <li class="social-instagram"><a target="_blank" href="  {!! site_settings('instagram')  !!} "><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li class="social-youtube"><a target="_blank" href="  {!! site_settings('youtube')  !!}"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </div> 
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="footer-head">نرشح لك صفحات</p>
+                            <div class="footer-links">
+                                <li>
+                                    <a href="{{ URL::to('/').'/'.App::getLocale() }}">الرئيسية</a>
+                                </li>
+
+                                <li>
+                                    <a href=" {{ URL::to('/').'/'.App::getLocale().'/About/'}} ">من نحن</a>
+                                </li>
+
+                                <li>
+                                    <a href=" {{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.News').'/2/'}} ">الأخبار</a>
+                                </li>
+                                
+                                <li>
+                                    <a href=" {{ URL::to('/').'/'.App::getLocale().'/Contact/'}} ">تواصل معنا</a>
+                                </li>               
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                        <p class="footer-head">تواصل معنا</p> 
+                        <div class="footer-links">
+                            <li>
+                                <a href="tel:  {!! site_settings('phone')  !!} "><img src=" {{  asset('/images/phone-icon.webp ') }}" alt="">   {!! site_settings('phone')  !!} </a>
+                            </li>
+
+                            <li>
+                                <a href="mailto:  {!! site_settings('Mail')  !!}  "><img src="  {{  asset('/images/close-envelope.webp') }} " alt="">  {!! site_settings('Mail')  !!} </a>
+                            </li>
+                        </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="map-footer">
+{!! site_settings('google_maps')  !!}                             </div>
+                            <p class="home">
+                                <i class="fa fa-home"></i>
+{!! site_settings('Location')  !!}                             </p>
+                        </div>                    
+                </div>
             </div>
-            <!-- /#rmm   -->
-         </div>
-      </div>
-      <!-- End Mobile Menu -->
-      <div class="modal fade modal-search" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-         <button type="button" class="close" data-dismiss="modal">×</button>
-         <div class="modal-dialog myModal-search">
-            <!-- Modal content-->
-            <div class="modal-content">
-               <div class="modal-body">
-                  <form role="search" method="get" class="search-form">
-                     <input class="search-field" placeholder="Search here..." value="" title="" type="search">
-                     <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
-                  </form>
-               </div>
+
+            <div class="copyrights">
+                <p class="text-center"> Copyright 2019 | All Rights Reserved developed and designed by <a href="https://corddigital.com/" target="_blank">Cord digital</a> <span>@ {!! site_settings('Web_site_name')  !!}    </span></p>
             </div>
-         </div>
-      </div>
-      <!-- End Modal Search-->
-      <div id="page">
-      <div id="skrollr-body">
-         <header id="mainmenu" class="header-v1 header-border header-fix header-bg-white" data-0="padding:10px;padding-left:40px;padding-right:40px;" data-251="padding:10px; padding-left:40px;padding-right:40px;top:0;">
-            <div class="right-header">
-               <ul class="navi-level-1 sub-navi seperator-horizonal-line hover-style-4">
-                  <!-- Testing Search Box -->
-                  <li>
-                     <a   title="{!! site_settings('Web_site_name')  !!} " href="#/"  class="mm-toggle three">
-                     <span aria-hidden="true" class="icon_menu"></span>
-                     </a>
-                  </li>
-               </ul>
+        </section>
+
+        <div class="fixed-social-media animated fadeInDown delay-.5s slowe">
+            <div class="social">
+                <a class="phone" href="tel:   {!! site_settings('phone')  !!}"><i class="fa fa-phone"></i></a>
+                <a class="facebook" target="_blank" href=" {!! site_settings('facebook')  !!} "><i class="fab fa-facebook"></i></a>
+                <a class="twitter" target="_blank" href=" {!! site_settings('twitter')  !!} "><i class="fab fa-twitter"></i></a>
+                <a class="instagram" target="_blank" href=" {!! site_settings('instagram')  !!} "><i class="fab fa-instagram"></i></a>
             </div>
-            <!-- End Right Header -->
-            <nav>
-               <ul class="navi-level-1 hover-style-2 main-navi nav-r">
-                  <li class="has-sub sub"><a  title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale()}}"><span><i class="fas fa fa-home"></i> {{ trans('langsite.Home')}} </span> </a>
-                  
-				    <!-- End Right Header 
-                  <div class="dropdown none">
-                      <a href="#">link one</a>
-                      
-                      <a href="#">link two</a>
-                  </div>
-				  -->
-                  </li>
-                  <li class="has-sub"><a  title="{!! site_settings('Web_site_name')  !!} " href=" {{ URL::to('/').'/'.App::getLocale().'/About/'}}"><span><i class="fas fa fa-flag"></i> {{ trans('langsite.About')}}</span></a>
-                  </li>
-                  <li class="has-sub"><a  title="{!! site_settings('Web_site_name')  !!} "  href="{{ URL::to('/').'/'.App::getLocale().'/all_services/'.trans('langsite.services').'/1/'}}"><span><i class="fas fa fa-check"></i> {{ trans('langsite.services')}}</span></a>
-                  </li>
-                  <li class="has-sub"><a   title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale().'/all_Projects/'.trans('langsite.Projects').'/3/'}}"><span><i class="fas fa fa-briefcase"></i> {{ trans('langsite.Projects')}}</span></a></li>
-                  <li class="has-sub"><a   title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.News').'/2/'}}"><span>
-                     <i class="fas fa fa-file"></i> {{ trans('langsite.News')}}</span></a>
-                  </li>
-                  <li class="has-sub"><a   title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale().'/Contact/'}}"><span><i class="fas fa fa-mobile"></i> {{ trans('langsite.Contact Us')}}</span></a>
-                  </li>
-                  <?php if (App::getLocale()=="en"){   ?>
-                  <li class="has-sub"><a  title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/ar/' }}"><span>
-                     <i class=" "></i>   عربي  </span></a>
-                  </li>
-                  <?php  }else {    ?>
-                  <li class="has-sub"><a  title="{!! site_settings('Web_site_name')  !!} "  href="{{ URL::to('/').'/en/' }}"><span>
-                     <i class=" "></i>   English  </span></a>
-                  </li>
-                  
-                  
-                  <?php  }    ?>
-                  <li class="has-sub header-mobile"><a   title="{!! site_settings('Web_site_name')  !!} " href="tel:01127582895/01092211824"><span><i class="fas fa fa-mobile"></i>  {{ trans('langsite.get prices')}}</span></a>
-                  </li>
-               </ul>
-            </nav>
-            <!-- End Nav -->
-            <div class="left-header">
-               <ul class="navi-level-1">
-                  <li><a  title="{!! site_settings('Web_site_name')  !!} "  href="{{ URL::to('/').'/'.App::getLocale().'/'}}" class="logo">
-                     <img     alt="{!! site_settings('Web_site_name')  !!}" class="img-logo" 
-                        src="{{ URL::to('/').'/images/mar2.png '}}"></a>
-                  </li>
-               </ul>
-            </div>
-            <!-- End Left Header -->
-         </header>
-         <!-- End  Header -->
-         @yield('content')	
-      </div>
-      <!-- End page -->
-      <a   title="{!! site_settings('Web_site_name')  !!} " id="to-the-top"><i class="fa fa-angle-up"></i></a>
-      <div id="fixed-social">
-         <div>
-            <a  title="{!! site_settings('Web_site_name')  !!} "  rel="nofollow" href=" {!! site_settings('facebook')  !!}" class="fixed-facebook" target="_blank">
-            <i class="fa fa-facebook"></i> <span>Facebook</span></a>
-         </div>
-         <div>
-            <a  title="{!! site_settings('Web_site_name')  !!} " rel="nofollow"  href=" {!! site_settings('instagram')  !!}" class="fixed-instagrem" target="_blank">
-            <i class="fa fa-instagram"></i> <span>Instagram</span></a>
-         </div>
-         <div>
-            <a  title="{!! site_settings('Web_site_name')  !!} " rel="nofollow"  href="tel:{!! site_settings('phone')  !!}" target="_self" class="fixed-phone" target="_blank">
-            <i class="fa fa-phone"></i>
-            <span> {!! site_settings('phone')  !!}</span></a>
-         </div>
-         <div>
-            <a  title="{!! site_settings('Web_site_name')  !!} "  rel="nofollow"  href="mailto:{!! site_settings('Mail')  !!}" target="_self" class="fixed-mail" target="_blank">
-            <i class="fa fa-at"></i> <span> {!! site_settings('Mail')  !!}</span></a>
-         </div>
-      </div>
-      <!-- Back To Top -->
-      <footer class="footer-v1">
-         <div class="footer-right">
-            <a   title="{!! site_settings('Web_site_name')  !!} " href="#">
-               <!-- <h2>LOGO</h2> -->
-            </a>
-         </div>
-         <div class="footer-left">
-            <ul class="social social-footer">
-               <li class="facebook"><a   title="{!! site_settings('Web_site_name')  !!} "rel="nofollow"  target="_blank"  href=" {!! site_settings('facebook')  !!} "><i class="fa fa-facebook"></i></a></li>
-               <li class="twitter"><a   title="{!! site_settings('Web_site_name')  !!} "  rel="nofollow" target="_blank"  href=" {!! site_settings('twitter')  !!} "><i class="fa fa-twitter"></i></a></li>
-               <li class="google-plus"><a     title="{!! site_settings('Web_site_name')  !!} " rel="nofollow" target="_blank" href=" {!! site_settings('google-plus')  !!} "><i class="fa fa-google-plus"></i></a></li>
-               <li class="youtube"><a    title="{!! site_settings('Web_site_name')  !!} " rel="nofollow"  target="_blank" href=" {!! site_settings('youtube')  !!} "><i class="fa fa-youtube-play"></i></a></li>
-               <li class="linkedin"><a   title="{!! site_settings('Web_site_name')  !!} "  rel="nofollow" target="_blank"  href=" {!! site_settings('linkedin')  !!} "><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-         </div>
-         <!-- End Left Footer -->
-         <nav class="nav-r">
-            <ul>
-                    <li class="has-sub header-mobile"><a   title="{!! site_settings('Web_site_name')  !!} " href="tel:01127582895/01092211824"><span><i class="fas fa fa-mobile"></i> 01127582895/01092211824</span></a>
-                  </li>
-               <li class="has-sub"><a   title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale() }}"><span>{{ trans('langsite.Home')}}</span></a>
-               </li>
-               <li class="has-sub"><a  title="{!! site_settings('Web_site_name')  !!} "  href="{{ URL::to('/').'/'.App::getLocale().'/About/'}}"><span>{{ trans('langsite.About')}}</span></a>
-               </li>
-                <li class="has-sub"><a  title="{{ trans('langsite.Home')}}"  href="{{ URL::to('/').'/'.App::getLocale().'/all_services/'.trans('langsite.services').'/3/'}}"><span>{{ trans('langsite.services')}}</span></a>
-                  </li>
-                						
-                  <li class="has-sub"><a   title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.Projects').'/3/'}}"><span>{{ trans('langsite.Projects')}}</span></a></li>
-                  <li class="has-sub"><a href="{{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.News').'/3/'}}"><span>{{ trans('langsite.News')}}</span></a>
-                  </li>
-               <li class="has-sub"><a   title="{!! site_settings('Web_site_name')  !!} " href="{{ URL::to('/').'/'.App::getLocale().'/Contact/'}}"><span>{{ trans('langsite.Contact Us')}}</span></a>
-               </li>
-            </ul>
-         </nav>
-         <!-- End Nav Footer -->
-         <!-- End Right Footer -->
-      </footer>
-      <!-- End Footer -->
-      <section class="copyright">
-         <p>Copyright © 2019 Designed by 
-            <a target="_blank" href="https://corddigital.com/">Cord digital</a>. All rights reserved.
-         </p>
-      </section>
-      <!-- SCRIPT -->
-      <script src="{{  asset('/js/vendor/jquery.min.js') }}"></script>
-      <script src=" {{  asset('/js/vendor/bootstrap.min.js') }} "></script>
-      <script src="{{  asset('/js/plugins/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-      <script src=" {{  asset('/js/plugins/wow.min.js') }} "></script>
-      <script type="text/javascript" src=" {{  asset('/js/plugins/skrollr.min.js') }} "></script>
-      <!-- Switcher
-         ================================================== -->
-      <script src=" {{  asset('/js/vendor/jquery.waypoints.min.js') }} "></script>
-      <script src="{{  asset('/js/vendor/jquery.counterup.min.js ') }} "></script>
-      <!-- REVOLUTION JS FILES -->
-      <script type="text/javascript" src="{{  asset('/revolution/js/jquery.themepunch.tools.min.js ') }}" ></script>
-      <script type="text/javascript" src=" {{  asset('/revolution/js/jquery.themepunch.revolution.min.js ') }} "></script>
-      <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
-         (Load Extensions only on Local File Systems !
-         The following part can be removed on Server for On Demand Loading) -->
-      <script src=" {{  asset('/js/vendor/wow.min.js') }} "></script>
-      <script type="text/javascript" src="{{  asset('/revolution/js/extensions/revolution.extension.actions.min.js') }} "></script>
-      <script type="text/javascript" src="  {{  asset('/revolution/js/extensions/revolution.extension.carousel.min.js') }} "></script>
-      <script type="text/javascript" src="  {{  asset('/revolution/js/extensions/revolution.extension.kenburn.min.js') }}  "></script>
-      <script type="text/javascript" src="{{  asset('/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}  "></script>
-      <script type="text/javascript" src="  {{  asset('/revolution/js/extensions/revolution.extension.migration.min.js') }}  "></script>
-      <script type="text/javascript" src="  {{  asset('/revolution/js/extensions/revolution.extension.navigation.min.js') }}  "></script>
-      <script type="text/javascript" src="  {{  asset('/revolution/js/extensions/revolution.extension.parallax.min.js') }}  "></script>
-      <script type="text/javascript" src=" {{  asset('/revolution/js/extensions/revolution.extension.slideanims.min.js') }}  "></script>
-      <script type="text/javascript" src="  {{  asset('/revolution/js/extensions/revolution.extension.video.min.js') }}  "></script>
-      <!-- Intializing Slider-->
-      <script type="text/javascript" src=" {{  asset('/js/plugins/slider.js ') }}  "></script>
-      <script src="  {{  asset('/js/vendor/parallax.min.js') }}  "></script>
-      <script src="  {{  asset('/js/vendor/jquery.jqlouds.min.js') }}  "></script>
-      <!-- Mobile Menu
-         ================================================== -->
-      <script src="  {{  asset('/js/plugins/jquery.mobile-menu.js') }}  "></script>
-      <!-- Initializing the isotope
-         ================================================== -->
-      <script src="  {{  asset('/js/plugins/isotope.pkgd.min.js') }}  "></script>
-      <script src="  {{  asset('/js/plugins/custom-isotope.js') }}  "></script>
-      <!-- Initializing Owl Carousel
-         ================================================== -->
-      <script src="  {{  asset('/js/plugins/owl.carousel.js') }} "></script>
-      <script src="  {{  asset('/js/plugins/custom-owl.js ') }} "></script>
-      <script src="  {{  asset('/js/plugins/noframework.waypoints.min.js ') }} "></script>
-      <script src=" {{  asset('/js/plugins/custom.js') }}"></script>
-   </body>
+        </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- owlcarousel js file -->
+<script src=" {{  asset('/js/owl.carousel.min.js ') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<!-- type.js cdn -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<!-- waypoints -->
+<script type="text/javascript" src=" {{  asset('/js/noframework.waypoints.min.js') }} "></script>
+<!-- lax js cdn -->
+<script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+<!-- main js files -->
+<script type="text/javascript" src=" {{  asset('/js/main.js') }}"></script>
+<script type="text/javascript" src="{{  asset('/js/sub.js  ') }} "></script>
+
+</body>
+
 </html>
+
+
+       
+

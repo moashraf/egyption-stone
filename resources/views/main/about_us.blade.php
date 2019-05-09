@@ -27,39 +27,182 @@
 <meta name="twitter:title" content=" {!! site_settings('about_us_seo_description')  !!} " />
 <meta name="twitter:image" content="{{ URL::to('/').'/images/mar2.png '}}" />
 <meta name="twitter:site" content="@mar-decor" />  
-    				<section>
-					<div class="sub-header sub-header-1 sub-header-about fake-position">
-						<div class="sub-header-content">
-							<h2 class="text-cap white-text">{{ trans('langsite.About')}}</h2>
-							<ol class="breadcrumb breadcrumb-arc text-cap">
-								<li>
-									<a   title="{!! site_settings('Web_site_name')  !!} " href="#">{{ trans('langsite.Home')}}</a>
-								</li>
-								<li>
-									<a  title="{!! site_settings('Web_site_name')  !!} "  href="#">{{ trans('langsite.About')}}</a>
-								</li>
-							</ol>
-						</div>
-					</div>
-				</section>
-				<!-- End Section Sub Header -->
 
-				<section class="padding rtl">
-					<div class="container">
-						<div class="row">
-							<div class="about-intro rtl">
-								<div class="about-intro-img">
-									<img src="{{ URL::to('/').'/images/about2.jpg'}}" class="img-responsive"    alt="{!! site_settings('Web_site_name')  !!}">
-								</div>
-								<div class="about-intro-text">
-									<h2 class="text-cap">{{ trans('langsite.About')}}</h2>
-									<p>    {!! site_settings('About_Us')  !!}  </p>
-								 
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				 
+
+ 
+        <section id="about">
+
+            <div class="container">
+
+                <div class="row">
+
+
+
+                    <div class="col-md-12">
+
+                        <div class="row no-gutters">
+
+                            <div class="col-md-12">
+
+                                <div class="about-img">
+
+                                    <img src=" {{  asset('/images/slider-2.webp ') }}  " alt="">
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="col-md-12">
+
+                                <div class="about-2-sections">
+
+                                    <div class="first-section">
+<p>    {!! site_settings('About_Us')  !!}  </p>
+
+                                    </div>
+
+
+
+                                    <div class="second-section">
+
+                                        <p>لماذا تختارنا</p>
+
+                                        <i class="fa fa-arrow-circle-down animated fadeInDown infinite slow"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+        
+
+        <section id="why-us">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="why-us-box why-us-box-animation visibility-0 slower">
+
+                            <div class="why-us-icon why-us-icon-hover text-center">
+
+                                <img src=" {{  asset('/images/diamond.webp ') }}  " alt="">
+
+                            </div>
+
+
+
+                            <div class="why-us-caption">
+
+                                <h4>القيم </h4>
+
+<p>    {!! site_settings('Values')  !!}  </p>
+                            </div>
+
+
+
+                            <div class="why-us-icon text-center lax" data-lax-preset="spin fadeInOut">
+
+                                <img src=" {{  asset('/images/spin.webp ') }}  " alt="">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-md-4">
+
+                        <div class="why-us-box why-us-box-animation-2 visibility-0 slower">
+
+                            <div class="why-us-icon why-us-icon-hover text-center">
+
+                                <img src="{{  asset('/images/target.png  ') }}  " alt="">
+
+                            </div>
+
+
+
+                            <div class="why-us-caption">
+
+                                <h4>هدفنا</h4>
+
+<p>    {!! site_settings('Mission')  !!}  </p>
+                            </div>
+
+
+
+                            <div class="why-us-icon text-center lax" data-lax-preset="spin fadeInOut">
+
+                                <img src=" {{  asset('/images/spin.webp ') }}  " alt="">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="col-md-4">
+
+                        <div class="why-us-box why-us-box-animation-3 visibility-0 slower">
+
+                            <div class="why-us-icon why-us-icon-hover text-center">
+
+                                <img src="{{  asset('/images/eye.png   ') }}  " alt="">
+
+                            </div>
+
+
+
+                            <div class="why-us-caption">
+
+                                <h4>رؤيتنا</h4>
+
+<p>    {!! site_settings('Vision')  !!}  </p>
+                            </div>
+
+
+
+                            <div class="why-us-icon text-center lax" data-lax-preset="spin fadeInOut">
+
+                                <img src=" {{  asset('/images/spin.webp ') }}  " alt="">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+       
+
    @endsection
