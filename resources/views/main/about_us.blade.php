@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
  <meta charset="UTF-8">
-   <meta name="author" content=" mar-decor  ">
+   <meta name="author" content=" {!! site_settings('Web_site_name')  !!}  ">
   <meta name="description" content=" {!! site_settings('about_us_seo_description')  !!}  "/>
  <meta name="Keywords" content="{!! site_settings('about_us_seo_description')  !!}  "/>
  <meta property="og:locale" content="<?php  echo App::getLocale() ; ?>" />
@@ -12,7 +12,7 @@
 <meta property="og:title" content=" {!! site_settings('Web_site_name')  !!} " />
 <meta property="og:description" content="{!! site_settings('about_us_seo_description')  !!}  " />
 <meta property="og:url" content="{{ URL::to('/') }}" />
-<meta property="og:site_name" content="Mar Decor" />
+<meta property="og:site_name" content=" {!! site_settings('Web_site_name')  !!}" />
 <meta property="article:tag" content="  {!! site_settings('Web_site_name')  !!} " />
 <meta property="article:section" content="" />
 <meta property="article:published_time" content="" />
@@ -26,7 +26,7 @@
 <meta name="twitter:description" content=" {!! site_settings('Web_site_name')  !!}" />
 <meta name="twitter:title" content=" {!! site_settings('about_us_seo_description')  !!} " />
 <meta name="twitter:image" content="{{ URL::to('/').'/images/mar2.png '}}" />
-<meta name="twitter:site" content="@mar-decor" />  
+<meta name="twitter:site" content="@{!! site_settings('Web_site_name')  !!}" />  
 
 
 

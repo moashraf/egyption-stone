@@ -10,6 +10,10 @@ html {
     -ms-text-size-adjust: 100%; 
 }
 
+.navbar-brand img {
+    height: 110px;
+}
+
 body {
     direction: rtl;
     font-family: 'Cairo', sans-serif;
@@ -239,19 +243,30 @@ section {
 }
 
 .why-us-box {
+    position: relative;
     background-image: linear-gradient(#4F595F, #000), url("../images/spin.webp");
     background-size: cover;
     background-position: center;
     padding: 15px 12px;
     text-align: center;
     border-radius: 3px;
-    height: 240px;
+    height: 265px;
     overflow-y: hidden;
+}
+
+.why-us-icon2 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
 }
 
 .why-us-icon-hover {
     transition: all .4s;
     padding: 5px;
+}
+
+.why-us-box img {
+    width: 28px !important;
 }
 
 
@@ -292,6 +307,10 @@ section {
     text-decoration: none;
 }
 
+.pagination-div {
+    display: table;
+}
+
 .service {
     padding: 5px;
     background-color: #4F595F;
@@ -327,6 +346,8 @@ section {
 
 .blog-img img { 
     width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
 
 .blog-caption {
@@ -341,6 +362,7 @@ section {
     text-decoration: none;
     color: navajowhite;
 }
+
 
 .blog-caption .date {
     color: #fff;
@@ -398,6 +420,7 @@ section {
     bottom: 0;
     background-color: #0a1217;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .footer {
@@ -409,8 +432,7 @@ section {
 }
 
 .footer-logo img {
-    position: relative;
-    left: 50px;
+    height: 100px;
 }
 
 .footer-head {
@@ -1202,10 +1224,28 @@ section {
     transform: scale(1.02);
 }
 
+    iframe {
+        height: 100%;
+    }
+    
+
 @media only screen and (max-width: 992px) {
     .nav-info-links a {
         margin-top: 10px;
         text-align: center;
+    }
+    
+    .navbar-brand img {
+        height: 80px;
+    }
+    
+    .footer-logo img {
+        height: 100px;
+    }
+    
+    iframe {
+        margin: 20px 0;
+        height: 100%;
     }
 
     .why-us-box {
@@ -1308,8 +1348,24 @@ section {
         height: 180px;
         padding: 10px;
     }
+    
+    .pagination-div {
+        display: table;
+    }
 
 }
 
+
+.pagination-div span {
+    display: inline-block;
+    background: #0a1217;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.pagination-div {
+    display: table;
+}
 
 

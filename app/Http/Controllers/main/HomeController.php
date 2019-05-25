@@ -23,9 +23,10 @@ class HomeController extends Controller
 		 
 		 
   $slider  = slider::limit(5)->latest()->with('get_slider_description')->get();
-  $NEWS  = NEWS::limit(3)->latest()->with('get_NEWS_description')->where('cat_id','=','2')->get();
-  $services  =  NEWS::limit(4)->latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
-  $Portfolio  = NEWS::limit(4)->latest()->with('get_NEWS_description')->where('cat_id','=','3')->get();
+  $NEWS  = NEWS::limit(30)->latest()->with('get_NEWS_description')->where('cat_id','=','2')->get();
+  $services  =  NEWS::limit(40)->latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
+ 
+  $Portfolio  = NEWS::limit(40)->latest()->with('get_NEWS_description')->where('cat_id','=','3')->get();
  // $slider = slider::latest()->with('get_slider_description')->get();
   // $projects = projects::with('get_projects_description')->where('project_cat_id','=','1')->orWhere('project_cat_id','=','2')->limit(4)->get();
     
@@ -116,6 +117,8 @@ class HomeController extends Controller
         $headers .= 'From: <info@mar-decor.com>' . "\r\n";
 
            if(isset($_POST['phone'])){
+			   
+			   
         if(mail($to,$subject,$message,$headers)){
            header("Location: https://mar-decor.com/oiuh98");
         }else{  echo "Mail Not Sent"; } } 
@@ -198,11 +201,12 @@ class HomeController extends Controller
 	   public function all_news($slg,$id)
     {
 		
- 
+  $services  =  NEWS::limit(40)->latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
 		  
 			$locale =\Request::segment(1) ;
 			App()->setLocale( $locale);
-			 $NEWS = NEWS::latest()->with('get_NEWS_description')->where('cat_id',$id)->get();
+			 $NEWS = NEWS::latest()->with('get_NEWS_description')->where('cat_id',$id)->paginate(6);
+ 
 			$categories_news = categories_news::where('id',$id)->get();	
 
  
@@ -210,6 +214,8 @@ class HomeController extends Controller
             [
  				                  'categories_news' => $categories_news ,
  				                  'NEWS' => $NEWS ,
+								  'services' => $services ,
+
  
 				 ]);
 			 
@@ -224,7 +230,8 @@ class HomeController extends Controller
  
    $locale =\Request::segment(1) ;
 			App()->setLocale( $locale);
-			
+			  $services  =  NEWS::limit(40)->latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
+
    //$NEWS  = NEWS::latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
    $NEWS = NEWS::with('get_NEWS_description')->with('get_News_Photos')  ->where('id', $id)->get();
   
@@ -234,6 +241,7 @@ class HomeController extends Controller
                         [ 
 						
 						
+ 						'services' => $services,
  						'NEWS' => $NEWS,
  						
 						
@@ -277,16 +285,22 @@ class HomeController extends Controller
 	
 	 public function About()
     {
-		
-		
- 
-						  
-						  
-	   $locale =\Request::segment(1) ;
+			  $services  =  NEWS::limit(40)->latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
+	 
+	 $locale =\Request::segment(1) ;
 		  App()->setLocale( $locale);
 		  
  		  
-		   return view('main.about_us' );
+ 		   
+		   
+		    return view('main.about_us',
+                        [ 
+						
+						
+ 						'services' => $services
+  						
+						
+						]);
  
      }
 	
@@ -297,12 +311,22 @@ class HomeController extends Controller
 	
 	 public function Contact()
     {
- 
+ 			  $services  =  NEWS::limit(40)->latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
+
  
     $locale =\Request::segment(1) ;
 		  App()->setLocale( $locale);
 		  
-		   return view('main.Contact');
+ 		    
+		   
+		    return view('main.Contact',
+                        [ 
+						
+						
+ 						'services' => $services
+  						
+						
+						]);
 				 
 				 
  				 
@@ -385,7 +409,8 @@ class HomeController extends Controller
  
    $locale =\Request::segment(1) ;
 			App()->setLocale( $locale);
-			
+		 			  $services  =  NEWS::limit(40)->latest()->with('get_NEWS_description')->where('cat_id','=','1')->get();
+	
       $services_singl = services::with('get_services_description')->with('get_services_Photos')  ->where('id', $id)->get();
   
 // dd( $NEWS[0]->get_NEWS_description[0]->slug );
@@ -394,6 +419,7 @@ class HomeController extends Controller
                         [ 
 						
 						
+ 						'services' => $services,
  						'services_singl' => $services_singl,
  						
 						

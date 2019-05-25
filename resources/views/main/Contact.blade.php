@@ -3,7 +3,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
    <meta charset="UTF-8">
-   <meta name="author" content=" mar-decor  ">
+   <meta name="author" content=" {!! site_settings('Web_site_name')  !!}  ">
   <meta name="description" content=" {!! site_settings('Contact_seo_description')  !!}  "/>
  <meta name="Keywords" content="{!! site_settings('Contact_seo_description')  !!}  "/>
  <meta property="og:locale" content="<?php  echo App::getLocale() ; ?>" />
@@ -11,7 +11,7 @@
 <meta property="og:title" content=" {!! site_settings('Web_site_name')  !!} " />
 <meta property="og:description" content="{!! site_settings('Contact_seo_description')  !!}  " />
 <meta property="og:url" content="{{ URL::to('/') }}" />
-<meta property="og:site_name" content="Mar Decor" />
+<meta property="og:site_name" content=" {!! site_settings('Web_site_name')  !!} " />
 <meta property="article:tag" content="  {!! site_settings('Web_site_name')  !!} " />
 <meta property="article:section" content="" />
 <meta property="article:published_time" content="" />
@@ -25,7 +25,7 @@
 <meta name="twitter:description" content=" {!! site_settings('Web_site_name')  !!}" />
 <meta name="twitter:title" content=" {!! site_settings('Contact_seo_description')  !!} " />
 <meta name="twitter:image" content="{{ URL::to('/').'/images/mar2.png '}}" />
-<meta name="twitter:site" content="@mar-decor" />  		 
+<meta name="twitter:site" content="@ {!! site_settings('Web_site_name')  !!} " />  		 
 						  
 					<title> {!! site_settings('Web_site_name')  !!}  {{ trans('langsite.Contact Us')}} </title>
 			   
@@ -68,11 +68,11 @@
                         <div class="contact-details">
                             <div class="footer-links">
                                 <li>
-                                    <a href="tel:{!!  site_settings('phone') !!}"><img src=" {{  asset('/images/phone-icon.webp') }}  " alt=""> {!!  site_settings('phone') !!}</a>
+                                    <a href="tel:{!!  site_settings('phone') !!}"><img src=" {{  asset('/images/phone-icon.webp') }}  " alt="{{  asset('/images/close-envelope.webp') }} "> {!!  site_settings('phone') !!}</a>
                                 </li>
 
                                 <li>
-                                    <a href="mailto:  {!!  site_settings('Mail') !!}"><img src=" {{  asset('/images/close-envelope.webp ') }}  " alt="">   {!!  site_settings('Mail') !!} </a>
+                                    <a href="mailto:  {!!  site_settings('Mail') !!}"><img src=" {{  asset('/images/close-envelope.png') }}  " alt="{{  asset('/images/close-envelope.webp') }} ">   {!!  site_settings('Mail') !!} </a>
                                 </li>
 
                                 <li>

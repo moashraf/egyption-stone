@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8">
     <!-- mobile meta -->
+	<meta name="robots" content="index, follow">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="robots" CONTENT="index, follow">
+<meta name="robots" CONTENT="all">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- bootstrap css file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -31,10 +36,9 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href=" {{ URL::to('/').'/'.App::getLocale() }} ">
-                    <picture>
-                        <source media="(max-width: 650px)" srcset="{{  asset('/images/180-70.png ') }} ">
+                    
                         <img src=" {{  asset('/images/200-90.png') }} " alt="">
-                    </picture>
+                    
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +48,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ URL::to('/').'/'.App::getLocale() }}">{{ trans('langsite.Home')}}  <span class="sr-only"> {{ trans('langsite.Home')}}</span></a>
+                            <a class="nav-link" href="{{ URL::to('/').'/'.App::getLocale() }}">{{ trans('langsite.Home')}} 
+							<span class="sr-only"> {{ trans('langsite.Home')}}</span></a>
                             <div class="line"></div>
                         </li>
                         <li class="nav-item">
@@ -52,40 +57,42 @@
                             <div class="line"></div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ماذا نقدم</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+							role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ماذا نقدم</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="single-service.html">خدمة 1</a>
-                                
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 2</a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 3</a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 4</a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 5</a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 6</a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 7</a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 8</a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="single-service.html">خدمة 9</a>
-                            </div>
+                                 
+                               
+								
+								
+								
+								
+								 @foreach($services as $NEWSs_val)
+            @foreach(  $NEWSs_val->get_NEWS_description  as  $NEWSs_val_dec)
+		
+                                <a class="dropdown-item" href="{!! $NEWSs_val->get_NEWS_path()  !!}">   {{  $NEWSs_val_dec->title}}   </a>
+ 								 	  <div class="dropdown-divider"></div>
+            @endforeach
+            @endforeach
+			
+			
+			
+			
+                             </div>
                             <div class="line"></div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=" {{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.Projects').'/3/'}} ">الأخبار</a>
+                            <a class="nav-link" href=" {{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.News').'/2/'}} ">الأخبار</a>
                             <div class="line"></div>
                         </li>
+						
+						
+						   <li class="nav-item">
+                            <a class="nav-link" href=" {{ URL::to('/').'/'.App::getLocale().'/all_news/'.trans('langsite.Projects').'/3/'}} ">سابقة الأعمال</a>
+                            <div class="line"></div>
+                        </li>
+						
+						
+						
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('/').'/'.App::getLocale().'/Contact/'}}">تواصل معنا</a>
                             <div class="line"></div>
@@ -94,10 +101,12 @@
 
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item nav-info-links">
-                            <a href="tel:{!! site_settings('phone')  !!} " class="nav-link">  {!! site_settings('phone')  !!}  <img src=" {{  asset('/images/phone-icon.webp ') }}" alt=""></a>
+                            <a href="tel:{!! site_settings('phone')  !!} " class="nav-link">  {!! site_settings('phone')  !!}  
+							<img src=" {{  asset('/images/phone-icon.png ') }}" alt=""></a>
                         </li>
                         <li class="nav-item nav-info-links">
-                            <a href="mailto:  {!! site_settings('Mail')  !!}  " class="nav-link">  {!! site_settings('Mail')  !!}  <img src=" {{  asset('/images/close-envelope.webp') }}" alt=""></a>
+                            <a href="mailto:  {!! site_settings('Mail')  !!}  " class="nav-link">  {!! site_settings('Mail')  !!} 
+							<img src=" {{  asset('/images/close-envelope.png') }}" alt=""></a>
                         </li>
                     </ul>
                 </div>
@@ -117,7 +126,7 @@
                 <div class="row">
                         <div class="col-md-3">
                             <div class="about-footer">
-                                <div class="footer-logo"><img src=" {{  asset('/images/180-70.png') }}" alt=""></div>
+                                <div class="footer-logo"><img src=" {{  asset('/images/200-90.png') }}" alt=""></div>
                                 <p>   {!! site_settings('About_Us')  !!} </p>
                                 <ul class="list-inline">
                                     <li class="social-facebook"><a target="_blank" href="  {!! site_settings('facebook')  !!}"><i class="fab fa-facebook"></i></a>
@@ -158,11 +167,11 @@
                         <p class="footer-head">تواصل معنا</p> 
                         <div class="footer-links">
                             <li>
-                                <a href="tel:  {!! site_settings('phone')  !!} "><img src=" {{  asset('/images/phone-icon.webp ') }}" alt="">   {!! site_settings('phone')  !!} </a>
+                                <a href="tel:  {!! site_settings('phone')  !!} "><img src=" {{  asset('/images/phone-icon.png ') }}" alt="">   {!! site_settings('phone')  !!} </a>
                             </li>
 
                             <li>
-                                <a href="mailto:  {!! site_settings('Mail')  !!}  "><img src="  {{  asset('/images/close-envelope.webp') }} " alt="">  {!! site_settings('Mail')  !!} </a>
+                                <a href="mailto:  {!! site_settings('Mail')  !!}  "><img src="  {{  asset('/images/close-envelope.png') }} " alt="">  {!! site_settings('Mail')  !!} </a>
                             </li>
                         </div>
                         </div>
@@ -207,6 +216,27 @@
 <script type="text/javascript" src=" {{  asset('/js/main.js') }}"></script>
 <script type="text/javascript" src="{{  asset('/js/sub.js  ') }} "></script>
 
+			<style>
+	.pagination-div span {
+    	color: white;
+        display: inline-block;
+        background: #0a1217;
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 15px;
+	}
+    
+    .why-us-box {
+        position: relative;
+    }
+
+    .why-us-icon2 {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+    }
+
+</style>
 </body>
 
 </html>

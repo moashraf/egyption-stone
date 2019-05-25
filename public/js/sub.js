@@ -2,7 +2,7 @@ jQuery(function($) {
     $('.gallery .item img').click(function() {
         var imgSrc = $(this).attr('src');
         $('.img-src').attr("src", imgSrc);
-        $('.popup-overlay').toggleClass('none')
+        $('.popup-overlay').toggleClass('none');
     })
 });
 

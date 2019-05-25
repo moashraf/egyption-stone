@@ -19,7 +19,7 @@
              <td> 
 			    @foreach($categoriesNews->get_all_post_on_cat   as $post)
 				
-				<a  href="https://mar-decor.com/admin/nEWS/{{ $post->id }}/edit"> 
+				<a  href="  {{ URL::to('/').'/admin/nEWS/'. $post->id.'/edit/'}} "> 
 				<img src="{{ URL::to('/').'/images/'.$post->single_photo}}"  width="50" height="50">  
 				</a>
 				
